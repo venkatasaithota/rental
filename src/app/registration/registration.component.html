@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+        <div class="container">
+            <form class="form" #reg="ngForm" (ngSubmit)="register(reg.value)">
+                    <h1 class="text-center">Registration Form</h1>
+                <div class="form-group">
+                    <label for="registerName">User Name</label>*
+                    <input type="text" name="name" id="registerName" class="form-control" ngModel #ref1="ngModel"  required>
+                    <label *ngIf='ref1.invalid && ref1.touched' class="text-danger">* this field is mandatory</label>
+                </div>
+                <div class="form-group">
+                        <label for="registerDate">Date Of Birth</label>
+                        <input type="date" name="dob" id="registerDate" class="form-control" ngModel>
+                    </div>
+                    <div class="form-group">
+                            <label for="registerMail">Mail</label>
+                            <input type="email" name="mail" id="registerMail" class="form-control" ngModel>
+                        </div>
+                        <div class="form-group">
+                                <label for="registerNumber">Phone Number</label>
+                                <input type="tel" name="number" id="registerNumber" class="form-control" ngModel #ref2="ngModel" minlength='10' maxlength='10'>
+                                <label *ngIf='ref2.invalid' class="text-danger">* this field must contain 10 digits</label>
+                            </div>
+                            <div class="form-group">
+                                    <label for="registerPassword">Password</label>*
+                                    <input type="password" name="password" id="registerPassword" class="form-control" ngModel #ref3="ngModel" minlength="5">
+                                    <label *ngIf='ref3.invalid  && ref3.touched' class="text-danger">* this field must contain minimum 5 characters</label>
+                                </div>
+                                <label>select type of User</label>*
+                                <div><label *ngIf='ref4.invalid' class="text-danger">* this field is mandatory</label></div>
+                                <div class="form-check">   
+                                        
+                                        <label for="registerusertype" class="form-check-label">
+                                        <input type="radio" name="usertype" id="registerusertype" value="owner" class="form-check-input" ngModel #ref4="ngModel" required>
+                                        Owner</label>
+                                        
+                                    </div>
+                                    <div class="form-check">   
+                                            <label for="registerusertype1" class="form-check-label">
+                                            <input type="radio" name="usertype" id="registerusertype1" value="vendor" class="form-check-input" ngModel #ref4="ngModel" required>
+                                            vender</label>
+                                        </div>
+                                         
+                                <div class="form-group">
+                                        <label for="registerAddress">Address</label>
+                                        <textarea name="address" id="registerAddress" cols="30" rows="5" ngModel></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                            <button type="submit" class="btn btn-primary">Register</button>
+                                        </div>
+                                                         
+            </form>
+        </div>
+    </div>
+    <div class="col-sm-3"></div>
+    </div>
+    

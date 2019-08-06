@@ -1,0 +1,25 @@
+<div class="container">
+<table class="table">
+    <thead class="thead-dark">
+        <th>vendor name</th>
+        <th>house address</th>
+        <th>mail</th>
+        <th>phone number</th>
+        <th>excepted rate</th>
+        <th>status</th>
+    </thead>
+    <tr *ngFor="let client of clients">
+        <td>{{client.vendorname}}</td>
+        <td>{{client.address}}</td>
+        <td>{{client.mail}}</td>
+        <td>{{client.number}}</td>
+        <td>{{client.eRent}}</td>
+        <td>
+            <div *ngIf="client != undefined ">
+                <button type="submit" class="btn btn-primary" (click)=accept(client)>accept</button>
+                <button type="submit" class="btn btn-danger ml-1" (click)=reject(client)>reject</button>
+            </div>
+        </td>
+    </tr>
+</table>
+</div>

@@ -1,0 +1,47 @@
+<div class="table-responsive">
+        <h1>owner deatails</h1>
+    <table class="table">
+        <thead class="thead-dark">
+        <th>name</th>
+        <th>address</th>
+        <th>date</th>
+        <th>dob</th>
+        <th>mail</th>
+        <th>phone no</th>
+        <th>usertype</th>
+    </thead>
+        <tr *ngFor='let obj of data'>
+            <td>{{obj.name}}</td>
+            <td>{{obj.address}}</td>
+            <td>{{obj.date}}</td>
+            <td>{{obj.dob}}</td>
+            <td>{{obj.mail}}</td>
+            <td>{{obj.number}}</td>
+            <td>{{obj.usertype}}</td>
+        </tr>
+    </table>
+</div>
+<div class="table-responsive">
+        <h1>vendor details</h1>
+        <table class="table">
+            <thead class="thead-dark">
+            <th>name</th>
+            <th>address</th>
+            <th>date</th>
+            <th>dob</th>
+            <th>mail</th>
+            <th>phone no</th>
+            <th>usertype</th>
+        </thead>
+            <tr *ngFor='let obj of data1'>
+                <td>{{obj.name}}</td>
+                <td>{{obj.address}}</td>
+                <td>{{obj.date}}</td>
+                <td>{{obj.dob}}</td>
+                <td>{{obj.mail}}</td>
+                <td>{{obj.number}}</td>
+                <td>{{obj.usertype}}</td>
+            </tr>
+        </table>
+    </div>
+    <button class="btn btn-secondary" (click)="logout()">logout</button>

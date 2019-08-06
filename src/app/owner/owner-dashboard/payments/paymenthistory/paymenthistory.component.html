@@ -1,0 +1,22 @@
+<div class="container">
+<table class="table">
+    <thead class="thead-dark">
+        <th>name of vendor</th>
+        <th>address</th>
+        <th>amount</th>
+        <th>date of payment</th>
+        <th>account number</th>
+        <th>ifsc code</th>
+        <th>status</th>
+    </thead>
+    <tr *ngFor="let obj of clients">
+        <td>{{obj.vendorname}}</td>
+        <td>{{obj.address}}</td>
+        <td>{{obj.amount}}</td>
+        <td>{{obj.date}}</td>
+        <td>{{obj.accountnumber}}</td>
+        <td>{{obj.ifsccode}}</td>
+        <td>{{obj.paystatus}}</td>
+    </tr>
+</table>
+</div>

@@ -1,0 +1,22 @@
+<div class="container">
+<form class="form" #ref="ngForm" (ngSubmit)="addpayment(ref.value)">
+    <h1 class="text-center">add payments</h1>
+    <div class="form-group">
+        <label >Account Number</label>
+        <input type="text" name="accno"  class="form-control" ngModel #ref2='ngModel' required>
+        <label *ngIf='ref2.invalid && ref2.touched' class="text-danger">* this field is mandatory</label>
+    </div>
+    <div class="form-group">
+        <label >IFSC Code</label>
+        <input type="text" name="ifsccode" class="form-control" ngModel #ref3='ngModel' required>
+        <label *ngIf='ref3.invalid && ref3.touched' class="text-danger">* this field is mandatory</label>
+    </div>
+    <div class="form-group">
+        <label >Google Pay Number</label>
+        <input type="text" name="gpay" class="form-control" ngModel>
+    </div>
+    <div class="form-group">
+            <button type="submit" class="btn btn-primary form-control">add</button>
+    </div>
+</form>
+</div>

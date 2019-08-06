@@ -1,0 +1,36 @@
+<div class="container">
+<input class="float-right" type="text" name="" id="" placeholder="search bar" [(ngModel)]='searchTerm'>
+<div class="table-responsive">
+<table class="table">
+    <thead class="thead-dark">
+        <th>type of house</th>
+        <th>address</th>
+        <th>owner name</th>
+        <th>aggrement</th>
+        <th>rent</th>
+        <th>image</th>
+        <th>expected rent</th>
+        <th>status</th>
+    </thead>
+
+<tr *ngFor="let house of list | find : searchTerm">
+               
+            <td>{{house.housetype}}</td>
+            <td>{{house.address}}</td>
+            <td>{{house.ownername}}</td>
+            <td>{{house.aggrement}}</td>
+            <td>{{house.hrent}}</td>
+            <td>{{house.himage}}</td>  
+
+            <td><input type="text" name="expectedrent" class="form- control" #ref></td>
+        <td>
+            <button class="btn btn-primary" type="submit" *ngIf="!(currentUser[0].name==house.vendorname)&&(house.reqstatus !='request accepted')" (click)="changeStatus(ref.value,house)">click for request</button>
+            <!--<button class="btn btn-primary" *ngIf="check " (click)="requestStatus(x)">check request </button>-->
+            <p *ngIf='currentUser[0].name==house.vendorname'>{{house.reqstatus}}</p>
+            <p *ngIf="!(currentUser[0].name==house.vendorname)&&(house.reqstatus =='request accepted')">house booked</p>
+        </td>
+    </tr>
+
+</table>
+</div>
+</div>

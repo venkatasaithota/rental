@@ -1,0 +1,20 @@
+<div class="container">
+    <table class="table">
+    <thead class="thead-dark">
+        <th>House Type</th>
+        <th>Rent</th>
+        <th>Address</th>
+        <th>rules</th>
+        <th>Images</th>
+        <th>delete houses</th>
+    </thead>
+    <tr *ngFor="let house of houses">
+        <td>{{house.housetype}}</td>
+        <td>{{house.hrent}}</td>
+        <td>{{house.address}}</td>
+        <td>{{house.aggrement}}</td>
+        <td>{{house.himage}}</td>
+        <td><button (click)="deleteDocument(house)">delete</button></td>
+    </tr>
+</table>
+</div>

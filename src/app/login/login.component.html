@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+        <div>
+            <div class="conatiner">
+                <h3 class=" text-center">Login Form for Owner/Vendor</h3>
+                    <form class="form" #ref=ngForm (ngSubmit)="submit(ref.value)">
+                        
+                        <div class="form-group">
+                            <label for="loginname" ><h4>UserName</h4></label>
+                            <input type="text" name="name" class="form-control" ngModel id="loginname" placeholder="enter your login name" #ref1='ngModel' required>
+                            <label *ngIf='ref1.invalid && ref1.touched' class="text-danger">* this field is mandatory</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginpassword"><h4>Password</h4></label>
+                            <input type="password" name="password" class="form-control" ngModel id="loginpassword" placeholder="enter your password" #ref3="ngModel" minlength="5">
+                            <label *ngIf='ref3.invalid  && ref1.touched' class="text-danger">* this field must contain minimum 5 characters</label>
+                        </div>
+                        <label>select type of User *</label>
+                        <div><label *ngIf='ref4.invalid' class="text-danger">* this field is mandatory</label></div>
+                                <div class="form-check">   
+                                        <label for="loginusertype" class="form-check-label">
+                                        <input type="radio" name="usertype" id="loginusertype" value="owner" class="form-check-input" ngModel #ref4="ngModel" required>
+                                        Owner</label>
+                                        
+                                    </div>
+                                    <div class="form-check">   
+                                            <label for="loginusertype1" class="form-check-label">
+                                            <input type="radio" name="usertype" id="loginusertype1" value="vendor" class="form-check-input" ngModel #ref4="ngModel" required>
+                                            vender</label>
+                                            
+                                        </div>
+                                
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>        
+                        <h6 class="text-center text-danger" *ngIf="loginDetails">{{loginDetails}}</h6>    
+                    </form>
+                    <div class="form-group text-center">
+                            <a routerLink="/nav/register"><u>click here to register</u></a>
+                        </div>
+                </div>
+        
+    </div>
+    <div class="col-sm-3"></div>
+    </div>

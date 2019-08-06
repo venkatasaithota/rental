@@ -1,0 +1,14 @@
+<div class="container">
+    <table class="table">
+    <thead class="thead-dark">
+        <th>Account No</th>
+        <th>IFSC NO</th>
+        <th>GooglePay No</th>
+    </thead>
+    <tr *ngFor="let obj of payments">
+        <td>{{obj.accno}}</td>
+        <td>{{obj.ifsccode}}</td>
+        <td>{{obj.gpay}}</td>
+    </tr>
+</table>
+</div>

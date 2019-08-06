@@ -1,0 +1,28 @@
+<form class="form" #ref1="ngForm" (ngSubmit)="addHouse(ref1.value)">
+    <h1 class="text-center text-primary">add our house details</h1>
+    <div class="form-group">
+        <label for="htype">House Type</label>
+            <input type="text" name="housetype" id="htype" ngModel class="form-control">
+    </div>
+    <div class="form-group">
+            <label for="rent">Rent</label>
+                <input type="text" name="hrent" id="rent" ngModel class="form-control">
+        </div>
+        <div class="form-group">
+                <label for="image">House Image</label>
+                    <input type="file" name="himage" id="image" ngModel class="form-control">
+            </div>
+            <div class="form-group">
+                    <label for="haddr">address *</label>
+                    <textarea name="address" id="haddr" cols="20" rows="5" class="form-control" ngModel  #ref2='ngModel' required></textarea>    
+                    <label *ngIf='ref2.invalid && ref2.touched' class="text-danger">* this field is mandatory</label>
+                </div>
+                <div class="form-group">
+                        <label for="hrules">Aggrement</label>
+                        <textarea name="aggrement" id="hrules" cols="20" rows="5" class="form-control" ngModel></textarea>    
+                    </div>
+                <div class="from-group">
+                    <button type="submit" class="btn btn-success  text-center" >add house</button>
+                </div>
+                
+</form>
